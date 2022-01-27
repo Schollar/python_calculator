@@ -1,2 +1,6 @@
-def subtract_numbers(num1, num2):
-    print(num1 - num2)
+def subtract_numbers(list):
+    result = list[0]
+    for i in range(1, len(list)):
+        result = result - list[i]
+
+    print(result)

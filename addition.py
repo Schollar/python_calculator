@@ -1,3 +1,3 @@
-def add_numbers(num1, num2):
-    result = num1 + num2
+def add_numbers(list):
+    result = sum(list)
     print("Your Result: " + str(result))
