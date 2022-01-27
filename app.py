@@ -4,6 +4,8 @@ import multiplication
 import subtraction
 
 
+# Function that takes in the user_selection(input) and the users choice of numbers(list)
+# and then calls the appropriate calculate function
 def calculator(input, list):
     if(input == 1):
         addition.add_numbers(list)
@@ -17,6 +19,7 @@ def calculator(input, list):
         print("Sorry not a valid choice")
 
 
+# Function that gets the users input on what math function to be done
 def get_user_input():
     try:
         print('Please select from the following options')
@@ -35,18 +38,24 @@ def get_user_input():
 
 # Wrap this with a try catch
 
+# Function that takes in user input numbers and adds them to a list to be passed along to the calculate function
+
 
 def get_calc(num):
-    number = input("Please atleast 2 numbers, type 'stop' to end: ")
-    if(number == 'stop'):
-        if(len(user_input_list) < 2):
-            print('You need atleast two numbers!')
+    try:
+        number = input("Please atleast 2 numbers, type 'stop' to end: ")
+        if(number == 'stop'):
+            # Checks to make sure the list has atleast 2 numbers
+            if(len(user_input_list) < 2):
+                print('You need atleast two numbers!')
+            else:
+                calculator(num, user_input_list)
         else:
-            calculator(num, user_input_list)
-    else:
-        num_float = float(number)
-        user_input_list.append(num_float)
-        get_calc(num)
+            num_float = float(number)
+            user_input_list.append(num_float)
+            get_calc(num)
+    except:
+        print('Something went wrong! Try again')
 
 
 user_input_list = []
